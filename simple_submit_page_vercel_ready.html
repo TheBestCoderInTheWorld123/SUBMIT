@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment Submit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #0070f3;
+      color: white;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Submit Assignment</h2>
+    <button onclick="handleClick()">Submit</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function handleClick() {
+      count++;
+
+      if (count >= 20) {
+        simulateLoading();
+      }
+    }
+
+    function simulateLoading() {
+      const msg = document.getElementById('message');
+      msg.textContent = 'Loading...';
+
+      setTimeout(() => {
+        msg.textContent = 'Assignment Submitted.';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
